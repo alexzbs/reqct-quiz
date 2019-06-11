@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import classes from './Layout.css'
-import MenuToggle from "../../components/UI/Navigation/MenuToggle/MenuToggle"
-import Drawer from "../../components/UI/Navigation/Drawer/Drawer"
+import MenuToggle from "../../components/Navigation/MenuToggle/MenuToggle"
+import Drawer from "../../components/Navigation/Drawer/Drawer"
 
 class Layout extends Component {
   state = {
