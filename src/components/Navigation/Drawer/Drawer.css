@@ -34,10 +34,10 @@
     background-color: #fff;
     position: relative;
     padding: 0 20px 10px 20px;
-    transition: opacity .3s
+    transition: opacity .3s;
 }
 
-.Drawer ul li a:hover,
-.active {
+.Drawer ul li a:hover, .active {
     opacity: .7;
 }
+
