@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import classes from './Drawer.css'
+import classes from './Drawer.module.css'
 import {NavLink} from 'react-router-dom'
 import Backdrop from '../../UI/Backdrop/Backdrop'
 
