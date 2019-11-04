@@ -18,11 +18,11 @@ export function auth(email, password, isLogin) {
 
         const data = response.data
 
-        const expirationDate = new Date(new Date().getTime + data.expiresIn * 1000)
+        const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000)
 
         localStorage.setItem('token', data.idToken)
         localStorage.setItem('userId', data.localId)
-        localStorage.setItem('token', expirationDate)
+        localStorage.setItem('expirationDate', expirationDate)
 
         dispatch(authSuccess(data.idToken))
         dispatch(autoLogout(data.expiresIn))
@@ -38,15 +38,18 @@ export function authSuccess(token) {
 export function autoLogout(time) {
     return dispatch => {
         setTimeout(() => {
-            dispatch(logout(), time * 1000)
-        })
+            dispatch(logout())
+        }, time * 1000)
     }
+}
+
+export function autoLogin() {
 
 }
 export function logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('userId')
-    localStorage.removeItem('token')
+    localStorage.removeItem('expirationDate')
     return {
         type: AUTH_LOGOUT
     }
